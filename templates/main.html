@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Reach Prediction</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        hr {
+            border: 1px solid #ddd;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        h3 {
+            color: #333;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Instagram Reach Prediction</h1>
+    
+    <form action="" method="post">
+        {% csrf_token %}
+        <label>Likes:</label>
+        <input type="number" name="likes" required>
+
+        <label>Saves:</label>
+        <input type="number" name="saves" required>
+
+        <label>Comments:</label>
+        <input type="number" name="comments" required>
+
+        <label>Shares:</label>
+        <input type="number" name="shares" required>
+
+        <label>Profile Visits:</label>
+        <input type="number" name="profile_visits" required>
+
+        <label>Follows:</label>
+        <input type="number" name="follows" required>
+
+        <input type="submit"> 
+    </form>
+    <hr>
+    {% if result %}
+        <h3>The number of impressions on the profile is {{ result }}</h3>
+    {% endif %}
+</body>
+</html>
